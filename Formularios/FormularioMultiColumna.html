@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+
+    <!-- Archivos Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Archivo all.css de Font Awesome -->
+    <link rel="stylesheet" href="css/all.css">
+
+    <title>Formulario Multi Columna</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-6">
+
+                <!-- FORMULARIO -->
+                <form action="" class="bg-light my-3 p-3 border rounded">
+                    <h2 class="mb-3">Solicitud de Soporte</h2>
+
+                    <!-- CAMPO NOMBRE -->
+                    <div class="form-group form-row">
+                        <label for="nombre" class="col-12 col-md-2 col-form-label">Nombre:</label>
+                        <div class="input-group col-12 col-md-10">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese su nombre:">
+                        </div>
+                    </div>
+
+                    <!-- CAMPO EMAIL -->
+                    <div class="form-group form-row">
+                        <label for="email" class="col-12 col-md-2 col-form-label">Email:</label>
+                        <div class="input-group col-12 col-md-10">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                             </div>
+                            <input type="email" name="email" id="email" class="form-control"placeholder="Ingrese su email:">
+                        </div>
+                    </div>
+
+                    <!-- CAMPO MENSAJE -->
+                    <div class="form-group form-row">
+                        <label for="mensaje" class="col-12 col-md-2 col-form-label align-self-center">Mensaje:</label>
+                        <div class="input-group col-12 col-md-10">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-comments"></i></span>
+                            </div>
+                            <textarea name="mensaje" id="mensaje" class="form-control" rows="5"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- CAMPO ACEPTAR TERMINOS Y CONDICIONES -->
+                    <div class="form-group form-row">
+                        <div class="col-auto offset-md-2">
+                            <div class="form-check">
+                                <input type="checkbox" name="terminos" id="terminos" class="form-check-input" value="acepto">
+                                <label for="terminos" class="form-check-label">Aceptar los Términos y Condiciones:</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BOTONES -->
+                    <div class="form-group mb-0 form-row"> <!-- form-row permite hace que el padding entre elementos sea de 5px en lugar de 15px por defecto de la case row -->
+                        <div class="col-auto offset-md-2">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="reset" class="btn btn-secondary">Borrar</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Archivos jQuery, Popper.js, Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,528 @@
+// ----------------------------------------
+// PATRONES DE COLORES
+//-----------------------------------------
+
+$principal:/* #57ce9e */ #90c448;
+$secundario:/* #3d937d */  /* #4d9e48 */ #485566;
+$texto:#5f7a93;
+
+/* ----------------------------------------
+1.- TIPOGRAFÍA DEL SITIO
+-----------------------------------------*/
+html{
+    font-size: 13px;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: $texto;
+}
+
+.row>*,
+.form-row>*{
+    //border: 1px solid red;
+}
+
+/* ----------------------------------------
+2.- ESTILOS GENERALES DE BOTONES
+-----------------------------------------*/
+.btn{
+    border-radius: 2rem;
+    padding: 0.6rem 2rem;
+    font-weight: bold;
+}
+
+.btn-primary{
+    background-color: $principal;
+    border-color: $principal;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.btn-primary:hover{
+    color: $secundario;
+    background-color: white;
+    border-color: $principal;
+}
+
+.btn-primary:active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+    color: $secundario !important;
+    background-color: lighten($color: $principal, $amount: 5%) !important;
+    border-color: $secundario !important;
+}
+
+.btn-primary:focus{
+    color: $secundario !important;
+    box-shadow: 0 0 0 0.2rem rgba($color: $principal, $alpha: 0.5) !important;
+}
+
+/* Insertar la flecha del botón principal */
+
+.btn-primary::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f138";
+    position: relative;
+    left: 0.6rem;
+    top: 0.1rem;
+    transition: left .3s ease
+}
+
+.btn-primary:hover::after,
+.btn-primary:active::after,
+.btn-primary:focus::after{
+    left: 0.3rem;
+}
+
+/* Insertar caja blanca del botón principal */
+
+.btn-primary::before{
+    content: "";
+    z-index: -1;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: skew(45deg);
+    transition: all 0.4s ease-in;
+}
+
+.btn-primary:hover::before,
+.btn-primary:focus::before,
+.btn-primary:active::before{
+    left: -15%;
+    width: 130%;
+}
+
+/* ----------------------------------------
+3.- ESTILOS COLOR PRINCIPAL
+-----------------------------------------*/
+.bg-primary{
+    background-color: $principal !important;
+}
+
+.text-primary{
+    color:$principal !important;
+}
+
+/* ----------------------------------------
+4.- ESTILOS COLOR SECUNDARIO
+-----------------------------------------*/
+.bg-secondary{
+    background-color: $secundario !important;
+}
+
+.text-secondary{
+    color:$secundario !important;
+}
+
+/* ----------------------------------------
+5.- ESTILOS PARA ".redes-sociales"
+-----------------------------------------*/
+
+.redes-sociales li a i{
+    color: white;
+    font-size: 1.5rem;
+    padding: .6rem 1rem;
+    opacity: .7;
+    transition: all .3s ease-in-out;
+}
+
+.redes-sociales li a i:hover{
+    opacity: 1;
+    transform: scale(1.25) rotate(360deg);
+}
+
+/* ----------------------------------------
+6.- ESTILOS PARA "#menu-navegación"
+-----------------------------------------*/
+
+/* Quitar estilos al botón por defecto */
+#menu-navegacion .navbar-toggler{
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    outline: 0;
+}
+
+/* Estilo del botón personalizado */
+#menu-navegacion .boton-menu::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0c9";
+    font-weight: 900;
+    font-size: 2rem;
+    color: white;
+}
+
+#menu-navegacion .icono-cerrar::before {
+    content: "\f00d";
+    position: relative;
+    left: 0.2rem;
+}
+
+/* Estilo de enlaces del "#menu-navegacion"*/
+.navbar-dark .navbar-nav .nav-link{
+    padding: 1rem 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: .5rem;
+    transition: all .3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link::after{
+    font-family: "Font Awesome 5 Free";
+    content: "\f105";
+    font-weight: 900;
+    transition: all .2s ease-in-out;
+}
+
+/* Estilo HOVER de enlaces de "#menu-navegacion" */
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: white;
+    background-color: lighten($color: $secundario, $amount: 10%);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover::after{
+    transform: rotate(180deg);
+}
+
+/* Estilos para el enlace activo */
+.navbar-dark .navbar-nav .nav-link.active{
+    background-color: $principal;
+}
+
+/* ----------------------------------------
+7.- ESTILOS PARA "#animacion"
+-----------------------------------------*/
+.swiper-slide{
+    height: 22rem;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* Fondo difuminado para sliders */
+.swiper-slide::before{
+    content: "";
+    position: absolute;
+    background: black;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.3;
+}
+
+/* Estilos para Flechas prev y next de sliders */
+.swiper-button-next,
+.swiper-button-prev{
+    background-image: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.swiper-button-prev::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f053";
+    font-weight: 900;
+    font-size: 3rem;
+    transition: all .3s ease-in-out;
+}
+
+.swiper-button-next::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f054";
+    font-weight: 900;
+    font-size: 3rem;
+    transition: all .3s ease-in-out;
+}
+
+.swiper-button-next:hover::before,
+.swiper-button-prev:hover::before{
+    color: $principal;
+}
+
+/* Estilos para paginador */
+.swiper-pagination-bullet-active {
+    background: $principal;
+}
+
+/* ----------------------------------------
+8.- ESTILOS PARA "#bienvenidos"
+-----------------------------------------*/
+
+/* Botón Play del video */
+.contenedor-video a{
+    background-color: rgba(white,0.8);
+    display: flex;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    color: $principal;
+    font-size: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.5s ease;
+    background-clip: padding-box;
+    border: 0 solid transparent;
+}
+
+.contenedor-video a:hover{
+    background-color: $principal;
+    color: white;
+    border: 10px solid rgba($secundario,0.5);
+}
+
+.contenedor-video img{
+    transition: all 1s ease-in-out;
+}
+
+.contenedor-video:hover img{
+    transform: scale(1.2);
+}
+
+/* ----------------------------------------
+9.- ESTILOS PARA "#te-ayudamos"
+-----------------------------------------*/
+#te-ayudamos{
+    position: relative;
+    transform: skewY(5deg);
+}
+
+#te-ayudamos .container{
+    transform: skewY(-5deg);
+}
+
+#te-ayudamos::before{
+    content: "";
+    position: absolute;
+    background: rgba($color: black, $alpha: 0.5);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* ----------------------------------------
+10.- ESTILOS PARA "#numeros"
+-----------------------------------------*/
+.contador-linea{
+    background-color: $principal;
+    width: 4rem;
+    height: 0.3rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Cuando se haga hover sobre la clase .col-6 se afectará a la clase .contador-linea */
+#numeros .col-6:hover .contador-linea{
+    bottom: 0.7rem;
+    transform: translateX(-50%) rotate(180deg);
+    background-color: $secundario;
+}
+
+/* ----------------------------------------
+11.- ESTILOS PARA "#horarios"
+-----------------------------------------*/
+#horarios::before{
+    content: "";
+    position: absolute;
+    background: rgba($color: black, $alpha: 0.5);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#horarios .table{
+    border: 2px solid $principal;
+}
+
+#horarios .table thead{
+    background-color: $principal;
+}
+
+#horarios .table td,
+#horarios .table thead th{
+    //border: none;
+}
+
+#horarios .table-hover tbody tr:hover{
+    color: $principal;
+    background-color: rgba(black,.075);
+}
+
+/* ----------------------------------------
+12.- ESTILOS PARA "#contacto"
+-----------------------------------------*/
+#contacto .detalle-rectangulo{
+    position: absolute;
+    background: $principal;
+    width: 2.5rem;
+    height: 2.5rem;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) translateY(50%) rotate(45deg);
+}
+
+/* ----------------------------------------
+12.- ESTILOS PARA DETALLES CONTACTO
+-----------------------------------------*/
+#contacto .detalle-rectangulo{
+    position: absolute;
+    background: $principal;
+    width: 2.5rem;
+    height: 2.5rem;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) translateY(50%) rotate(45deg);
+}
+
+/* ----------------------------------------
+13.- ESTILOS PARA RESERVAR CITA
+-----------------------------------------*/
+.input-group-cita{
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+/* ----------------------------------------
+14.- ESTILOS PARA SELECTOR DE FECHAS Y HORAS
+-----------------------------------------*/
+.picker__box{
+    border: .5rem solid $principal;
+}
+
+.picker--focused .picker__day--selected, 
+.picker__day--selected, 
+.picker__day--selected:hover {
+    background: $principal;
+}
+
+.picker__day--today:before {
+    border-top: .5em solid darken($color:$principal, $amount: 20%);
+}
+
+.picker__button--today:before {
+    border-top: .66em solid darken($color:$principal, $amount: 20%);
+}
+
+.picker__select--month, 
+.picker__select--year {
+    padding: 0;
+    border-radius: .5rem;
+}
+
+.picker__list {
+    padding: .75em 0;
+}
+
+.picker--focused .picker__list-item--highlighted, 
+.picker__list-item--highlighted:hover, 
+.picker__list-item:hover {
+    color: white;
+    background: $principal;
+}
+
+.picker__list-item--highlighted, 
+.picker__list-item:hover {
+    border-color: darken($color: $principal, $amount: 10%);
+}
+
+.picker--time .picker__button--clear:focus, 
+.picker--time .picker__button--clear:hover {
+    border-radius: 0.5rem
+}
+
+/* ----------------------------------------
+15.- ESTILOS PARA FOOTER
+-----------------------------------------*/
+.columna-inclinada::before{
+    content: "";
+    position: absolute;
+    background: $principal;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    left: -100%;
+}
+
+.enlaces-secundario a{
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid darken($color: white, $amount: 40%);
+    box-shadow: 0 2px darken($color: white, $amount: 80%);
+}
+
+/* ----------------------------------------
+16.- ESTILOS PARA MENÚ DE NAVEGACIÓN FIJO
+-----------------------------------------*/
+.menu-fijo{
+    transition: all .5s ease-in-out;
+    background-color: darken($color: $secundario, $amount: 10%) !important;
+    width: 100% !important;
+}
+
+/* ----------------------------------------
+x.- Media Queries
+-----------------------------------------*/
+@media(min-width:768px){
+
+    .navbar-dark .navbar-nav .nav-link::after{
+        content: "";
+    }
+
+    .navbar-dark .navbar-nav .nav-link{
+        padding: .8rem 1.2rem;
+        border-radius: 1.5rem;
+    }
+    .swiper-slide{
+        height: 24rem;
+    }
+
+    #te-ayudamos{
+        transform: skewY(3deg);
+    }
+    
+    #te-ayudamos .container{
+        transform: skewY(-3deg);
+    }
+
+    .columna-inclinada::before{
+        left: -300%;
+        right: 0;
+        transform: skewX(20deg);
+    }
+}
+
+@media(min-width:992px){
+    html{
+        font-size: 16px;
+    }
+    .swiper-slide{
+        height: 30rem;
+    }
+}
